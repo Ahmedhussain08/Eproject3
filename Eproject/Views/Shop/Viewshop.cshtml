@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Eproject.Models.shop>
+@{
+    ViewData["Title"] = "Viewshop";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<h1>View Shops</h1>
+
+<div class="page-content fade-in-up">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox">
+                <div class="ibox-head">
+                    <div class="ibox-title">Basic form</div>
+                    <div class="ibox-tools">
+                        <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item">option 1</a>
+                            <a class="dropdown-item">option 2</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-body">
+                   <table>
+                       <thead>
+                           <tr>
+
+                           <th>ID</th>
+                           <th>Name</th>
+                           <th>Actions</th>
+                           </tr>
+                       </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

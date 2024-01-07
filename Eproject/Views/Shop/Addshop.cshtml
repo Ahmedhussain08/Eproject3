@@ -1,0 +1,47 @@
+﻿@model Eproject.Models.shop
+@{
+    ViewData["Title"] = "Addshop";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<h1>Add New Shop</h1>
+
+<div class="page-content fade-in-up">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox">
+                <div class="ibox-head">
+                    <div class="ibox-title">Basic form</div>
+                    <div class="ibox-tools">
+                        <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item">option 1</a>
+                            <a class="dropdown-item">option 2</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-body">
+                    <form asp-controller="Shop" asp-action="Addshop" method="post">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Enter Shop Name</label>
+                                <input class="form-control" asp-for="Name" type="text" placeholder="Enter Shop Name">
+                            </div>
+                           
+                        </div>
+                       
+                        
+                       
+                        <div class="form-group">
+                            <input type="submit" value="save" class="btn btn-success" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
