@@ -28,12 +28,43 @@ namespace Eproject.Controllers
             db.Shops.Add(shop);
             db.SaveChanges();
             return RedirectToAction("Addshop");
-
         }
         public IActionResult Viewshop()
         {
             var getshops = db.Shops.ToList();
             return View(getshops);
         }
+        [HttpPost]
+        public IActionResult EditShop(int id, string name)
+        {
+            var shop = db.Shops.Find(id);
+
+            if (shop == null)
+            {
+                return NotFound();
+            }
+
+            shop.Name = name;
+            db.SaveChanges();
+
+            return RedirectToAction("Viewshop");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteShop(int id)
+        {
+            var shop = db.Shops.Find(id);
+
+            if (shop == null)
+            {
+                return NotFound();
+            }
+
+            db.Shops.Remove(shop);
+            db.SaveChanges();
+
+            return RedirectToAction("Viewshop");
+        }
+
     }
 }
